@@ -1,0 +1,7 @@
+ad_manager:
+  application_name: AdEvolver
+  path_to_private_key_file: INSERT_PATH_TO_JSON_KEY_FILE_HERE
+adwords:
+  client_id: 584845077131-643j0q8fko53l0fisvlcdj34sflq2v6d.apps.googleusercontent.com
+  client_secret: 11JUE_ifUDEYlaSu7cMom_eF
+  developer_token: rcPHkjqMKPXp2H6uwH6NJw

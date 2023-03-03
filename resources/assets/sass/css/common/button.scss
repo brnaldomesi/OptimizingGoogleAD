@@ -1,0 +1,20 @@
+
+.red-primary {
+  @apply bg-redPrimary;
+  @apply m-1;
+  @apply py-3;
+  @apply px-8;
+  @apply rounded;
+  @apply text-white; 
+  &:hover{
+    @apply bg-redPrimaryHover;
+  }
+}
+
+.gray-secondary {
+  @apply bg-gray-200;
+  @apply m-1;
+  @apply py-3;
+  @apply px-8;
+  @apply rounded;
+}

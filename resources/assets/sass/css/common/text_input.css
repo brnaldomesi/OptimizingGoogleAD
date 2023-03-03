@@ -1,0 +1,21 @@
+/* Text Input */
+
+input.form-control {
+  @apply px-4;
+  @apply py-2;
+  border: 1px solid theme('colors.formControl.input.default');
+  transition: border-color .3s ease;
+  border-radius: 5px;
+}
+
+input.form-control:hover {
+  border-color: theme('colors.formControl.input.hover')
+}
+
+input.form-control:focus {
+  border-color: theme('colors.formControl.input.hover')
+}
+
+input.form-control:focus {
+  outline: none;
+}

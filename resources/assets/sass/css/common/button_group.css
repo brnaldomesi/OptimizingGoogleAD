@@ -1,0 +1,26 @@
+/* Button Group */
+
+.button-group {
+  display: flex;
+}
+
+.button-group input[type=radio] {
+  display: none;
+}
+
+.button-group input[type=radio] + label {
+  @apply p-2;
+  border: 2px solid #0000;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-group input[type=radio]:hover + label {
+  @apply bg-background;
+}
+
+.button-group input[type=radio]:checked + label {
+  @apply font-semibold;
+  border: 2px solid theme('colors.formControl.lightgray');
+  border-radius: 3px;
+}

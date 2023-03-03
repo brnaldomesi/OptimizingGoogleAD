@@ -1,0 +1,17 @@
+sendgrid==6.0.5
+yamlordereddictloader==0.4.0
+PyMySQL==0.8.0
+googleads==19.0.0
+pandas==0.22.0
+SQLAlchemy==1.2.1
+numpy==1.16.6
+nltk==3.2.5
+pytz==2019.2
+forex_python==1.5
+requests==2.22.0
+tendo==0.2.12
+python_dateutil==2.8.1
+PyYAML==5.3
+
+# dev
+ipython

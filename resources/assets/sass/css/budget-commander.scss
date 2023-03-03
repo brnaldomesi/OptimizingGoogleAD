@@ -1,0 +1,64 @@
+@media (min-width: theme('screens.xl')) {
+  .BudgetCommander__overview--stat {
+    min-width: 13rem;
+  }
+}
+
+.BudgetCommander__overview--stat {
+  @apply pl-4;
+  border-left-width: 1px;
+  border-image: linear-gradient(
+      to bottom, 
+      #0000, 
+      #eeee 15%,
+      #eeee 85%,
+      #0000
+    ) 1 100%;
+}
+
+@media (max-width: theme('screens.md')) {
+  .BudgetCommander__overview--stat {
+    border: 0;
+    @apply px-0;
+  }
+}
+
+@media (max-width: theme('screens.xl')) {
+  .BudgetCommander__overview--stat:first-child {
+    border: 0;
+    @apply pl-0;
+  }
+}
+
+.BudgetCommander__overview--stat:not(:last-child) {
+  @apply pr-4;
+}
+
+.BudgetCommander__legend-item--line:before {
+  position: absolute;
+  @apply bg-background;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 3px;
+  content: '';
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.BudgetCommander__actions {
+  // .custom-radio .custom-control-label::before {
+  //   border-color: #f91c6b
+  // }
+  
+  // .custom-control-input:checked ~ .custom-control-label::before {
+  //   border-color: #f91c6b
+  // }
+  
+  // .custom-control-input:checked ~ .custom-control-label::after {
+  //   color: #f91c6b;
+  // }
+  
+  // .switch-button input[type="checkbox"]:checked + span {
+  //   background-color: #f91c6b;
+  // }
+}

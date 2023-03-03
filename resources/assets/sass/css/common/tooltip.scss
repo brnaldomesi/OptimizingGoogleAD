@@ -1,0 +1,70 @@
+@mixin tooltip-after {
+  content: "";
+  @apply absolute;
+  top: 50%;
+  margin-top: -5px;
+  border-width: 5px;
+  @apply border-solid;
+}
+
+.tooltip_underline {
+    @apply border-b;
+    @apply border-dotted;
+    @apply border-main;
+}
+
+.tooltip {
+  @apply relative;
+  @apply inline-block;
+  
+  &:hover {
+    .tooltiptext {
+      @apply visible;
+    }
+  }
+
+  .tooltiptext {
+    @apply invisible;
+    @apply w-72;
+    @apply bg-main;
+    @apply text-center;
+    @apply rounded;
+    @apply p-2;
+    @apply absolute;
+    @apply z-10;
+    @apply text-white;
+    font-size: 13px;
+  }
+
+  .bottom-left {
+    right: 100%;
+    top: 100%;
+  }
+
+  .bottom-right {
+    left: 100%;
+    top: 100%;
+  }
+
+  .center-right {
+    left: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    &::after {
+      @include tooltip-after;
+      right: 100%;
+      border-color: transparent theme('colors.main.default') transparent transparent;
+    }    
+  }
+
+  .center-left {
+    right: calc(100% + 5px);
+    top: 50%;
+    transform: translateY(-50%);
+    &::after {
+      @include tooltip-after;
+      left: 100%;
+      border-color: transparent transparent transparent theme('colors.main.default');
+    }
+  }
+}

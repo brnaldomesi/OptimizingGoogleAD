@@ -1,0 +1,247 @@
+/*@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');*/
+
+html {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 14px;
+}
+
+body {
+  @apply bg-gray-200;
+  @apply text-main;
+}
+
+main {
+  @apply p-8;
+  margin-left: theme('config.sidebarWidth');
+  margin-top: theme('config.headerHeight');
+}
+
+/* Layout */
+
+.card {
+  @apply p-6;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 7px 14px #eee6;
+  border-radius: 6px;
+}
+
+.card-title {
+  @apply text-lg;
+  @apply font-bold;
+  @apply mb-3; 
+  @apply text-main-dark;
+}
+
+.row {
+  @apply -m-4;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.row+.row{
+  @apply mt-4;
+}
+
+.col {
+  @apply p-4;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* Form row */
+
+.form-row {
+  @apply mb-6;
+  @apply flex;
+  @apply items-center;
+}
+
+/* Text Input */
+
+input.form-control {
+  @apply px-4;
+  @apply py-2;
+  border: 1px solid theme('colors.formControl.input.default');
+  transition: border-color .3s ease;
+  border-radius: 5px;
+}
+
+input.form-control:hover {
+  border-color: theme('colors.formControl.input.hover')
+}
+
+input.form-control:focus {
+  border-color: theme('colors.formControl.input.hover')
+}
+
+input.form-control:focus {
+  outline: none;
+}
+
+/* Radio */
+
+input[type=radio].form-control {
+  display: none;
+}
+
+input[type=radio].form-control + label {
+  @apply ml-12;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type=radio].form-control + label:before {
+  @apply -ml-12;
+  content: ' ';
+  position: absolute;
+  background-color: theme('colors.formControl.lightgray');
+  top: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  transition: background-color .3s ease;
+}
+
+input[type=radio].form-control.danger + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.danger');
+}
+
+input[type=radio].form-control.success + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.success');
+}
+
+input[type=radio].form-control.dark + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.dark');
+}
+
+input[type=radio].form-control.warning + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.warning');
+}
+
+input[type=radio].form-control:checked + label:after {
+  @apply -ml-12;
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  transform: translate(75%, -50%);
+  /* (w1 - w2) * 100 / w2 / 2 percent */
+  border-radius: 50%;
+}
+
+input[type=radio].form-control.danger:checked + label:after {
+  /* @apply bg-danger; */
+    background-color: #CA2D78;
+
+}
+
+input[type=radio].form-control.success:checked + label:after {
+  /* @apply bg-success; */
+    background-color: #CA2D78;
+
+}
+
+input[type=radio].form-control.dark:checked + label:after {
+  /* @apply bg-dark; */
+  background-color: #CA2D78;
+}
+
+input[type=radio].form-control.warning:checked + label:after {
+  @apply bg-warning;
+}
+
+/* Checkbox common (checkbox and switch) */
+
+label.form-control {
+  display: flex;
+  align-items: center;
+}
+
+input[type=checkbox].form-control {
+  display: none;
+}
+
+input[type=checkbox].form-control + .marker {
+  @apply w-12;
+  @apply h-12;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background-color: theme('colors.formControl.lightgray');
+  border-radius: 3px;
+}
+
+input[type=checkbox].form-control:hover + .marker {
+  box-shadow: inset 0 0 0px 2px theme('colors.main.light');
+}
+
+/* Checkbox */
+
+input[type=checkbox].form-control:not(.switch):checked + .marker {
+  background-image: url('../img/common/tick.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Switch */
+
+input[type=checkbox].form-control.switch + .marker {
+  @apply w-24;
+}
+
+input[type=checkbox].form-control.switch + .marker:before {
+  @apply bg-background;
+  @apply text-main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: 'NO';
+  left: 3px;
+  top: 3px;
+  bottom: 3px;
+  right: 50%;
+  border-radius: 3px;
+  position: absolute;
+  transition: all ease .3s;
+}
+
+input[type=checkbox].form-control.switch:checked + .marker:before {
+  @apply bg-main;
+  @apply text-background;
+  content: 'YES';
+  right: 3px;
+  left: 50%;
+}
+
+/* Button Group */
+
+.button-group {
+  display: flex;
+}
+
+.button-group input[type=radio] {
+  display: none;
+}
+
+.button-group input[type=radio] + label {
+  @apply p-2;
+  border: 2px solid #0000;
+  cursor: pointer;
+  outline: none;
+}
+
+.button-group input[type=radio]:hover + label {
+  @apply bg-background;
+}
+
+.button-group input[type=radio]:checked + label {
+  @apply font-semibold;
+  border: 2px solid theme('colors.formControl.lightgray');
+  border-radius: 3px;
+}

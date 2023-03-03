@@ -1,0 +1,70 @@
+/* Radio */
+
+input[type=radio].form-control {
+  display: none;
+}
+
+input[type=radio].form-control + label {
+  @apply ml-12;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type=radio].form-control + label:before {
+  @apply -ml-12;
+  content: ' ';
+  position: absolute;
+  background-color: theme('colors.formControl.lightgray');
+  top: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  transition: background-color .3s ease;
+}
+
+input[type=radio].form-control.danger + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.redPrimary');
+}
+
+input[type=radio].form-control.success + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.success');
+}
+
+input[type=radio].form-control.dark + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.redPrimary');
+}
+
+input[type=radio].form-control.warning + label:hover:before {
+  box-shadow: inset 0 0 0px 2px theme('colors.warning');
+}
+
+input[type=radio].form-control:checked + label:after {
+  @apply -ml-12;
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  bottom: 0;
+  width: 1rem;
+  height: 1rem;
+  transform: translate(75%, -50%);
+  /* (w1 - w2) * 100 / w2 / 2 percent */
+  border-radius: 50%;
+}
+
+/* input[type=radio].form-control.danger:checked + label:after {
+  @apply bg-danger;
+} */
+
+/* input[type=radio].form-control.success:checked + label:after {
+  @apply bg-success;
+} */
+
+/* input[type=radio].form-control.dark:checked + label:after {
+  @apply bg-dark;
+} */
+/* 
+input[type=radio].form-control.warning:checked + label:after {
+  @apply bg-warning;
+} */

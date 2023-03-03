@@ -1,0 +1,59 @@
+/* Switch */
+
+input[type=checkbox].form-control.switch + .marker {
+  @apply w-24;
+}
+
+input[type=checkbox].form-control.switch + .marker:before {
+	@apply bg-background;
+  @apply text-main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: 'NO';
+  left: 3px;
+  top: 3px;
+  bottom: 3px;
+  right: 50%;
+  border-radius: 3px;
+  position: absolute;
+  transition: all ease .3s;
+}
+
+input[type=checkbox].form-control.switch:checked + .marker:before {
+	/* @apply bg-main; */
+	background-color: #CA2D78;
+  @apply text-background;
+  content: 'YES';
+  right: 3px;
+  left: 50%;
+}
+
+input[type=checkbox].form-control.switch + .marker-bar {
+  @apply w-10;
+}
+
+input[type=checkbox].form-control.switch + .marker-bar:before {
+	@apply bg-main;
+  @apply text-main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: '';
+  left: -1px;
+  top: -1px;
+  bottom: -1px;
+  right: 55%;
+  border-radius: 3px;
+  position: absolute;
+  transition: all ease .3s;
+}
+
+input[type=checkbox].form-control.switch:checked + .marker-bar:before {
+	/* @apply bg-danger; */
+	background-color: #CA2D78;
+  @apply text-background;
+  content: '';
+  right: -1px;
+  left: 55%;
+}

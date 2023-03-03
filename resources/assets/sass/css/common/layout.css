@@ -1,0 +1,147 @@
+/* Layout */
+
+.card {
+  @apply p-6;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 7px 14px #eee6;
+  border-radius: 6px;
+}
+
+.card-title {
+  @apply text-lg;
+  @apply font-bold;
+  @apply mb-3; 
+  @apply text-main-dark;
+}
+
+.row {
+  @apply -m-4;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.row+.row{
+  @apply mt-4;
+}
+
+.col {
+  @apply p-4;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* Form row */
+
+.form-row {
+  @apply mb-6;
+  @apply flex;
+  @apply items-center;
+}
+
+.border-right-bottom-cut {
+  @apply p-5;
+  @apply relative;
+}
+
+.border-right-bottom-cut:after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  border-bottom: .8rem solid white;
+  border-left: .8rem solid transparent;
+  width: 0;
+}
+
+.ad-border {
+  border-radius: 3px;
+  border: 1px solid;
+  padding: .25rem .5rem;
+  line-height: 11px;
+  margin-right: 7px;
+  background-color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  margin-left: 0px;
+}
+
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 6px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.underline {
+  text-decoration-color: theme('colors.url.title');
+}
+
+.custom-sub {
+  bottom: 0.3rem;
+  right: -0.3rem;
+}
+
+.tailed {
+  @apply items-center;
+  @apply relative;
+  @apply flex;
+}
+
+.tailed:after {
+  content: '';
+  @apply absolute;
+  @apply bg-gray-200;
+  left: 100%;
+  @apply h-1;
+  @apply w-3
+}
+
+.blur-right {
+  @apply absolute;
+  @apply w-5;
+  @apply inset-y-0;
+  @apply right-0;
+  @apply bg-white;
+  @apply opacity-75;
+}
+
+.compare-blurd-right {
+  @apply absolute;
+  @apply inset-y-0;
+  @apply right-0;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgb(255, 255, 255) 15%, rgb(255, 255, 255) 100%);
+}
+
+.compare-eye {
+  @apply relative;
+}
+
+.compare-eye:after {
+  @apply absolute;
+  @apply border-solid;
+  @apply border;
+  @apply border-main;
+  @apply h-32;
+  content: '';
+  @apply top-1/2;
+  @apply left-1/2;
+  @apply z-0;
+  transform: translateY(-50%) rotate(30deg);
+}
+
+.eye {
+  @apply bg-white;
+  @apply z-10;
+  padding: .1rem;
+}
+
+@media (max-width: 640px) {
+  .xs-flex-wrap{
+    @apply flex-wrap;
+  }
+}
